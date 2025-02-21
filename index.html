@@ -10,53 +10,80 @@
 
 <body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
     <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h2 class="text-xl font-bold mb-4">Insira os valores para calcular os ajustes de tunagem do carro</h2>
+        <h2 class="text-xl font-bold mb-4 text-center">Insira os valores para calcular os ajustes de tunagem do carro</h2>
 
         <label class="block">Distribuição de Peso Frontal (%):</label>
         <input id="pesoFrontal" type="number" class="w-full p-2 rounded bg-gray-700 text-white mb-3" min="0" max="100">
 
-        <label class="block">Rigidez de Retorno Dianteira (Mínimo - Máximo):</label>
-        <div class="flex space-x-2">
-            <input id="retornoDianteiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Mín">
-            <input id="retornoDianteiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Máx">
-        </div>
-
-        <label class="block">Rigidez de Retorno Traseira (Mínimo - Máximo):</label>
-        <div class="flex space-x-2">
-            <input id="retornoTraseiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Mín">
-            <input id="retornoTraseiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Máx">
-        </div>
-
-        <label class="block mt-3">Porcentagem de Rigidez de Compressão (50% à 75%):</label>
+        <label class="block mt-1">Porcentagem de Rigidez de Compressão (50% à 75%):</label>
         <input id="compressao" type="number" class="w-full p-2 rounded bg-gray-700 text-white mb-3" min="50" max="75">
 
-        <label class="block">Barra Estabilizadora Dianteira (Mínimo - Máximo):</label>
+        <label class="block mt-1">Rigidez de Retorno Dianteira (Mínimo - Máximo):</label>
         <div class="flex space-x-2">
-            <input id="barraDianteiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Mín">
-            <input id="barraDianteiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Máx">
+            <input id="retornoDianteiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                placeholder="Mín">
+            <input id="retornoDianteiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                placeholder="Máx">
         </div>
 
-        <label class="block">Barra Estabilizadora Traseira (Mínimo - Máximo):</label>
+        <label class="block mt-1">Barra Estabilizadora Dianteira (Mínimo - Máximo):</label>
         <div class="flex space-x-2">
-            <input id="barraTraseiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Mín">
-            <input id="barraTraseiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Máx">
+            <input id="barraDianteiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                placeholder="Mín">
+            <input id="barraDianteiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                placeholder="Máx">
         </div>
 
-        <label class="block">Molas Dianteiras (Mínimo - Máximo):</label>
+        <label class="block mt-1">Molas Dianteiras (Mínimo - Máximo):</label>
         <div class="flex space-x-2">
-            <input id="molaDianteiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Mín">
-            <input id="molaDianteiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Máx">
+            <input id="molaDianteiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                placeholder="Mín">
+            <input id="molaDianteiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                placeholder="Máx">
         </div>
 
-        <label class="block">Molas Traseiras (Mínimo - Máximo):</label>
-        <div class="flex space-x-2">
-            <input id="molaTraseiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Mín">
-            <input id="molaTraseiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white" placeholder="Máx">
+        <input type="checkbox" id="toggleTraseiro" class="mb-3 mt-1">
+        <label for="toggleTraseiro mt-1">Ativar Ajustes da Traseira do Carro</label>
+
+        <div id="camposTraseira">
+            <label class="block">Barra Estabilizadora Traseira (Mínimo - Máximo):</label>
+            <div class="flex space-x-2">
+                <input id="barraTraseiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                    placeholder="Mín">
+                <input id="barraTraseiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                    placeholder="Máx">
+            </div>
+
+            <label class="block">Molas Traseiras (Mínimo - Máximo):</label>
+            <div class="flex space-x-2">
+                <input id="molaTraseiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                    placeholder="Mín">
+                <input id="molaTraseiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                    placeholder="Máx">
+            </div>
+
+            <label class="block">Rigidez de Retorno Traseira (Mínimo - Máximo):</label>
+            <div class="flex space-x-2">
+                <input id="retornoTraseiraMin" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                    placeholder="Mín">
+                <input id="retornoTraseiraMax" type="number" class="w-1/2 p-2 rounded bg-gray-700 text-white"
+                    placeholder="Máx">
+            </div>
         </div>
 
-        <button onclick="ajustesTunagem()" class="mt-4 w-full p-2 bg-blue-500 rounded hover:bg-blue-600">Calcular</button>
+        <button onclick="ajustesTunagem()"
+            class="mt-4 w-full p-2 bg-blue-500 rounded hover:bg-blue-600">Calcular</button>
 
-        <div id="resultados" class="mt-4"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="resultadosModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+            <h3 class="text-xl font-bold mb-4 text-center">Resultados</h3>
+            <div id="resultados" class="text-white"></div>
+            <button onclick="closeModal()"
+                class="mt-4 w-full p-2 bg-red-500 rounded hover:bg-red-600">Fechar</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
